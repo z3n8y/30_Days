@@ -1,7 +1,7 @@
 
 public class Car {
 	
-	//Constructors
+	
 	int maxSpeed = 100;
 	int minSpeed = 0;
 	double currentSpeed;
@@ -17,8 +17,9 @@ public class Car {
 	double mpg = 26.4;
 	
 	int numberOfPeopleInCar = 1;
+	int maxNumberOfPeopleInCar = 6;
 	
-	
+	//Constructor
 	public Car(int customMinSpeed, double customWeight, 
 			boolean customIsTheCarOn) {
 		// TODO Auto-generated constructor stub
@@ -39,6 +40,7 @@ public class Car {
 		System.out.println("Current Fuel: " + currentFuel);
 		System.out.println("MPG: " + mpg);
 		System.out.println("People in car: " + numberOfPeopleInCar);
+		System.out.println("Max Capacity: " + maxNumberOfPeopleInCar);
 		System.out.println("");
 	}
 	//instance methods
@@ -47,11 +49,23 @@ public class Car {
 	}
 	
 	public void getIn() {
-		numberOfPeopleInCar ++;
+		if (numberOfPeopleInCar < maxNumberOfPeopleInCar) {
+			numberOfPeopleInCar ++;
+			System.out.println("Someone got in.");
+		} else {
+			System.out.println("The car is full.");
+		}
+		
 	}
 	
 	public void getOut() { 
-		numberOfPeopleInCar --;
+		if (numberOfPeopleInCar > 0 ) {
+			numberOfPeopleInCar --;
+			System.out.println("Someone got out.");
+		} else {
+			System.out.println("There is no one in the car.");
+		}
+		
 	}
 	
 	public double homManyMilesUntilOutOfGas() {
@@ -67,23 +81,39 @@ public class Car {
 		maxSpeed = maxSpeed + 1;
 	}
 	
+	public void turnTheCarOn() {
+		if (!isTheCarOn) {
+			isTheCarOn = true;
+			System.out.println("Cshhhhhhhhhgghgg");
+		} else {
+			System.out.println("The car is already on");
+		}
+	}
+	
+	public void turnTheCarOff() {
+		//Turns the car off
+		if (isTheCarOn) { //if the car is on then turn it off
+			isTheCarOn = false;
+			System.out.println("Shutting it off.");
+		} else { // otherwise print out that it is already off.
+			System.out.println("The car is already off");
+		}
+	}
+	
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Car birthdayPresent = new Car(500, 5000.5, true);		
-		System.out.println("Birthday Car v1");
-		birthdayPresent.printVariables();
 		
 		//Changes
-		birthdayPresent.getIn();
-		birthdayPresent.getIn();
-		birthdayPresent.getIn();
-		System.out.println("Miles Left: " + birthdayPresent.homManyMilesUntilOutOfGas());
-		System.out.println("Birthday Car v2");
-		birthdayPresent.printVariables();
+		birthdayPresent.turnTheCarOff();
+		birthdayPresent.turnTheCarOn();
+		birthdayPresent.turnTheCarOn();
+		birthdayPresent.turnTheCarOff();
+		birthdayPresent.turnTheCarOff();
 		
-		birthdayPresent.getOut();
-		System.out.println("Birthday Car v3");
-		birthdayPresent.printVariables();
+		
+		
 	}
 
 }
