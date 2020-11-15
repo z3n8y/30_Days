@@ -9,13 +9,13 @@ public class Day_3_Conditionals {
 	public static String isItWierd(int number) {
 		
 		String whatIsIt;
-		if (number % 2 == 1  ) {  //If number is odd, it is weird
+		if (number % 2 == 1  ) {  				//If number is odd, it is weird
 			whatIsIt = "Weird";
-		} else {                  //If number is even,
-			if (number >= 6 && number <= 20){  // And between 6 and 20 inclusively
-				whatIsIt = "Weird";            // it is weird
-			} else {						   // Otherwise it's not weird
-				whatIsIt = "Not Weird";
+		} else {                  				//If number is even,
+			if (number >= 6 && number <= 20){  	// And between 6 and 20 inclusively
+				whatIsIt = "Weird";            	// it is weird
+			} else {						   	// Otherwise 
+				whatIsIt = "Not Weird";			// it is not weird
 			}	
 		}	
 		return whatIsIt;

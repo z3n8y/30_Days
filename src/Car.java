@@ -20,6 +20,11 @@ public class Car {
 	int maxNumberOfPeopleInCar = 6;
 	
 	//Constructor
+	public Car() {
+		
+	}
+	
+	//Constructor
 	public Car(int customMinSpeed, double customWeight, 
 			boolean customIsTheCarOn) {
 		// TODO Auto-generated constructor stub
@@ -27,6 +32,29 @@ public class Car {
 		weight = customWeight;
 		isTheCarOn = customIsTheCarOn;
 	}
+	
+	// Getters and Setters
+	public int getMaxSpeed() {
+		return this.maxSpeed;		
+	}
+	
+	public void setMaxSpeed(int newMaxSpeed) {
+		this.maxSpeed = newMaxSpeed;
+	}
+	
+	public int getMinSpeed() {
+		return this.minSpeed;
+	}
+	
+	public double getWeight() {
+		return this.weight;
+	}
+	
+	public boolean getIsTheCarOn() {
+		return this.isTheCarOn;
+	}
+	
+	
 	
 	public void printVariables() {
 		System.out.println("Max Speed: " + maxSpeed);
@@ -76,9 +104,8 @@ public class Car {
 		return maxFuel * mpg;
 	}
 	
-	public void upgradeMinSpeed() {
-		minSpeed = maxSpeed;
-		maxSpeed = maxSpeed + 1;
+	public void upgradeMaxSpeed() {
+		setMaxSpeed(getMaxSpeed() + 10);	
 	}
 	
 	public void turnTheCarOn() {
