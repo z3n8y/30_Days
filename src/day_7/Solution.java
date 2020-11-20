@@ -26,15 +26,12 @@ public class Solution {
 		for (int i = 0; i < array.length; i++) {
 			int item = array[i];
 			printThis += item;
-			//System.out.print(item);
 			if (i < array.length -1 ) {
-				printThis += " ";
-				//System.out.print(" ");			
+				printThis += " ";			
 			}
 		}
 		System.out.println(printThis);		
 	}
-	
 	
     private static final Scanner scanner = new Scanner(System.in);
 
