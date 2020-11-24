@@ -1,6 +1,6 @@
 package day_12_inheritance;
 
-public class Animal {
+public abstract class Animal {
 	public int age;
 	
 	public Animal(int Age) {
@@ -8,23 +8,45 @@ public class Animal {
 		System.out.println("An animal has been created!");
 	}
 	
-	public void eat() {
-		System.out.println("An animal is eating");
+	public abstract void eat();
+	
+	public void sleep() {
+		System.out.println("An animal is sleeping.");
+	}
+	
+	public int getAge() {
+		return age;
 	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Animal a = new Animal(5);
+		
 		Dog d = new Dog();
 		Cat c = new Cat();
-		
-		d.ruff();
-		c.meow();
-		a.eat();
 		d.eat();
 		c.eat();
-		d.run();
-		c.prance();
+		d.sleep();
+		c.sleep();
+		
+		
+		//Casting
+		Object dog = new Dog();
+		Dog realDog = (Dog) dog;
+		realDog.ruff();
+		
+		Object str = "est";
+		String realStr = (String) str;
+		System.out.println(realStr.endsWith("t"));
+		
+		//What happens when...
+		Dog doggy = new Dog();
+		if (d instanceof Animal) {
+			Animal animal = (Animal) doggy;
+			animal.sleep();
+		}
+		
+		
+		
 	}
 
 }
