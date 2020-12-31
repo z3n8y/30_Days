@@ -48,7 +48,7 @@ public class Solution {
 				System.out.println("Array is sorted in " + madSwaps + " swaps.");
 				System.out.println("First Element: " + a[0]);
 				System.out.println("Last Element: " + a[a.length - 1]);
-				System.out.println("Total Number of swaps: " + madSwaps);
+				//System.out.println("Total Number of swaps: " + madSwaps);
 				break;
 			}
 			
