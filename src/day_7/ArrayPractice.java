@@ -8,16 +8,16 @@ public class ArrayPractice {
 		// TODO Auto-generated constructor stub
 	}
 
-	public static void printArray(int[] array) {
+	public static <E> void printArray(E[] array) {
 		System.out.print("[");
-		for (int i = 0; i < array.length; i++) {
-			int item = array[i];
-			System.out.print(item);
-			if (i < array.length -1 ) { 
-				System.out.print(", ");			
-			}
+		int itNumber = 0;
+		for (E element : array) {
+			System.out.print(element + ", ");
+			
 		}
-		System.out.println("]");		
+		System.out.print("]");
+		System.out.println();
+			
 	}
 	
 	public static void main(String[] args) {
@@ -31,12 +31,12 @@ public class ArrayPractice {
 		//method 2 Allocating
 		int[] intArray2 = new int[4];
 		//method 3 Initializing
-		int[] intArray3 = {6, 4, 1, 9};
+		Integer[] intArray3 = {6, 4, 1, 9};
 		
 		String[] shoppingList = {"bannanas", "apples", "pears"};
 		
 		System.out.println(Arrays.toString(intArray3));
-		
+		printArray(intArray3);
 		
 		// Special for loop : for each
 		
